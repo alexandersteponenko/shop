@@ -1,0 +1,29 @@
+function e(e,t,r,a){Object.defineProperty(e,t,{get:r,set:a,enumerable:!0,configurable:!0})}function t(e){return e&&e.__esModule?e.default:e}var r="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:"undefined"!=typeof global?global:{},a={},n={},o=r.parcelRequire94c2;null==o&&((o=function(e){if(e in a)return a[e].exports;if(e in n){var t=n[e];delete n[e];var r={id:e,exports:{}};return a[e]=r,t.call(r.exports,r,r.exports),r.exports}var o=Error("Cannot find module '"+e+"'");throw o.code="MODULE_NOT_FOUND",o}).register=function(e,t){n[e]=t},r.parcelRequire94c2=o);var c=o.register;c("gC69E",function(t,r){e(t.exports,"register",function(){return a},function(e){return a=e});var a,n=new Map;a=function(e,t){for(var r=0;r<t.length-1;r+=2)n.set(t[r],{baseUrl:e,path:t[r+1]})}}),c("drCrl",function(r,a){e(r.exports,"ORDERS",function(){return c}),e(r.exports,"BASKET_EMPTY",function(){return i}),e(r.exports,"ORDER_NO_PRODUCT",function(){return s}),e(r.exports,"saveCartToLocalStorage",function(){return l}),e(r.exports,"loadCartFromLocalStorage",function(){return d}),e(r.exports,"showErrorMessage",function(){return u});var n=o("bhxGU");let c="Заказы",i="Корзина пуста",s="В заказе нет товаров";function l(e){localStorage.setItem("bag",JSON.stringify(e))}function d(){return JSON.parse(localStorage.getItem("bag"))||[]}function u(e){document.body.innerHTML=`
+      <div class="container">
+        <div class="link-cart">
+          <a href="./index.html" class="link__wrapper">
+            <img src="${t(n)}" alt="\u{438}\u{43A}\u{43E}\u{43D}\u{43A}\u{430} \u{432}\u{435}\u{43A}\u{442}\u{43E}\u{440}\u{430}" class="img__vector" />
+            <p class="link__title">\u{421}\u{43F}\u{438}\u{441}\u{43E}\u{43A} \u{442}\u{43E}\u{432}\u{430}\u{440}\u{43E}\u{432}</p>
+          </a>
+        </div>
+        <h2>${e}</h2>
+      </div>
+    `}}),c("bhxGU",function(e,t){e.exports=new URL("ic-Vector.49399ea7.svg",import.meta.url).toString()}),c("6KKKg",function(e,t){e.exports=new URL("rating.cdb36a68.svg",import.meta.url).toString()}),o("gC69E").register(new URL("",import.meta.url).toString(),JSON.parse('["gXW11","index.eae185d8.js","hlSOR","rating.cdb36a68.svg","5rfxX","ic-Vector.49399ea7.svg","cpwCf","apple.c23c0112.png","2BrG8","headphones.49f52ace.svg","b6XKM","Iphone 11-black.5c8235e7.svg","cnX2O","Iphone 11-blue.577f2131.svg","4KGwK","Iphone 13 Pro-silver.e8b60c70.svg","46Umo","Iphone 13 Pro-grey.4056ddb3.svg","aHU2k","Samsung Galaxy Note 21.a84e0b4c.svg","c9cqy","Samsung Galaxy S21+.fb4ec577.svg","doNdY","ic-cart.45602407.svg","aR3v1","checkout.f40b6824.js"]'));var i=o("drCrl"),s=o("kZp87"),l=o("fEUPL");new URL("apple.c23c0112.png",import.meta.url).toString(),new URL("headphones.49f52ace.svg",import.meta.url).toString(),new URL("Iphone 11-black.5c8235e7.svg",import.meta.url).toString(),new URL("Iphone 11-blue.577f2131.svg",import.meta.url).toString(),new URL("Iphone 13 Pro-silver.e8b60c70.svg",import.meta.url).toString(),new URL("Iphone 13 Pro-grey.4056ddb3.svg",import.meta.url).toString(),new URL("Samsung Galaxy Note 21.a84e0b4c.svg",import.meta.url).toString(),new URL("Samsung Galaxy S21+.fb4ec577.svg",import.meta.url).toString();var d={};d=new URL("ic-cart.45602407.svg",import.meta.url).toString(),o("6KKKg");const u=(0,l.initializeApp)({apiKey:"AIzaSyBQ0ay2192erVHEap3YGibJBct9cWnw1qo",authDomain:"shop-fda0b.firebaseapp.com",projectId:"shop-fda0b",storageBucket:"shop-fda0b.appspot.com",messagingSenderId:"583984113131",appId:"1:583984113131:web:81a003a19230c20e0c65ae"}),f=(0,s.getFirestore)(u);async function g(){let e=[];try{return(await (0,s.getDocs)((0,s.collection)(f,"products"))).forEach(t=>{e.push({id:t.id,...t.data()})}),e}catch(e){return console.error("Ошибка при получении товаров:",e),[]}}const p=document.getElementById("card-list"),_=document.getElementById("bagListImg"),m=document.querySelector(".orders__list");let S=[],H=localStorage.getItem("userId");function b(){_.innerHTML="",(0,i.loadCartFromLocalStorage)().forEach(e=>{let t=document.createElement("li");t.className="bag-item",t.innerHTML=`<img class="bag__img" src="${e.imageURL}" alt="${e.model}" />`,_.appendChild(t)})}async function E(){let e=(0,s.collection)(f,"orders");try{let t=await (0,s.getDocs)(e);if(m.innerHTML="",t.empty)return;{let e=document.createElement("h3");e.textContent=i.ORDERS,m.appendChild(e)}t.forEach(e=>{let t=document.createElement("a");t.className="orders__list-text",t.href=`orders.html?id=${e.id}`,t.textContent=`# ${e.id}`,m.appendChild(t)})}catch(e){console.error("Ошибка при получении заказов: ",e)}}async function h(){var e;e=await g(),p.innerHTML="",e.forEach(e=>{let r=document.createElement("li");r.className="card",r.setAttribute("product-card-id",e.id),r.innerHTML=`
+      <div class="card__image">
+        <a href="./card.html?id=${e.id}" class="card__img">
+          <img src="${e.imageURL}" alt="${e.model}" />
+        </a>
+      </div>
+      <div class="card__content">
+        <a href="./card.html?id=${e.id}" class="card__info">
+          <h2 class="card__model">${e.model}</h2>
+          <p class="card__series">${e.series}</p>
+        </a>
+        <div class="card__price">
+          <p class="card__price-number">$ ${e.price}</p>
+          <button class="addButton-bag" data-id=${e.id}>
+            <img src="${t(d)}" class="addButton-img" />
+          </button>
+        </div>
+      </div>   
+    `,r.querySelector(".addButton-bag").addEventListener("click",()=>(function(e){let t=S.find(t=>t.id===e.id);t?t.quantity++:S.push({...e,quantity:1}),(0,i.saveCartToLocalStorage)(S),b()})(e)),p.appendChild(r)}),S=(0,i.loadCartFromLocalStorage)(),b(),E()}H||(H="user_"+Date.now(),localStorage.setItem("userId",H)),window.onload=h;
