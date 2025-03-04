@@ -1,0 +1,76 @@
+.popup {
+  opacity: 0;
+  visibility: hidden;
+  background-color: #0006;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: all .5s;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.popup__open, .popup-payment__open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup__content {
+  background: #fff;
+  border-radius: 15px;
+  width: 676px;
+  padding: 32px;
+}
+
+.popup__laible {
+  color: #1a1f1680;
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.input-form {
+  color: #1a1f1680;
+  background: #fff;
+  border: none;
+  border-radius: 13px;
+  width: 596px;
+  height: 59px;
+  padding: 8px 16px;
+  font-size: 20px;
+  box-shadow: 0 4px 16px #1a1f1626;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 24px;
+  font-size: 20px;
+}
+
+.save-btn {
+  color: #fff;
+  background: #1a1f16;
+  border-radius: 10px;
+  width: 100%;
+  padding: 8px 24px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.payment__info-form {
+  flex-direction: column;
+  display: flex;
+}
+
+.payment-label {
+  cursor: pointer;
+  color: #1a1f1680;
+  margin-bottom: 16px;
+  font-family: Cabin;
+  font-size: 24px;
+  line-height: 24px;
+}
+/*# sourceMappingURL=checkout.d52af188.css.map */
